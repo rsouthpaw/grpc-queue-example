@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "in.saransh.gdma_pb";
+option java_outer_classname = "GDMAPB";
+//option java_package = "io.grpc.examples.helloworld";
+//option java_outer_classname = "HelloWorldProto";
+
+package gdma_pb;
+
+service GDMA {
+  // Get Distance using GDMA
+  rpc GetDistance (GDMARequest) returns (GDMAResponse) {}
+}
+
+message GDMARequest {
+  repeated string sources = 1;
+  repeated string destinations = 2;
+}
+
+message GDMAResponse {
+  repeated string r1 = 1;
+  repeated string r2 = 2;
+}
+
